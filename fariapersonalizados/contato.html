@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Faria Personalizados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <!--Estilos-->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css" />
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/animation.css" />
+    <link rel="stylesheet" type="text/css" href="assets/jquery-confirm/jquery-confirm.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/local/estilos.css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class=" col-lg-12 navbar navbar-expand-lg navbar-dark sticky-top bg-roxo-claro">
+                <img src="assets/img/logo_branco.png" alt="logo_faria_personalizados" title="Faria Personalizados"
+                    width="150px">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="institucional.html">Institucional</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="prod.html">Produtos</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <section class="row">
+            <div class="col-lg-12 text-center">
+                <label class="display-3">Gostou de nossos Produtos, encontre-nos!</label>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-3">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffariapersonalizados&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=951939724858826"
+                    width="340" height="500" style="border:1px lightgray solid;overflow:hidden" scrolling="no"
+                    frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div class="col-lg-9">
+                <div id="map" style="height: 500px;"></div>
+            </div>
+
+        </section>
+
+
+
+
+        <footer id="footer" class="row bg-roxo" style="margin-top: 20px">
+            <div class="col-xs-12 col-lg-9 text-white">
+                <address>
+                    Rua José Augusto Pinto, 190, Pompéu
+                    <br>
+                    Sabará - MG || 34518-010
+                    <br>
+                    (31) 97507 - 0686 || (31) 99576 - 0071
+                </address>
+            </div>
+            <div class="col-xs-12 col-lg-3 text-center text-white">
+                <h5>Redes Sociais</h5>
+                <a href="https://www.facebook.com/fariapersonalizados" target="_blank" class="ml-auto" title="Facebook"><i
+                        class="icone-facebook-circled-2 text-white" style="font-size: 50px;"></i></a>
+                <a href="https://www.instagram.com/faria_personalizados" target="_blank" class="ml-auto" title="Instagram"><i
+                        class="icone-instagram-circled text-white" style="font-size: 50px;"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=553195760071" target="_blank" class="ml-auto" title="Whatsapp"><i
+                        class="icone-whatsapp text-white" style="font-size: 50px;"></i></a>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <!--Scripts-->
+    <script src="assets/bootstrap/jquery-3.3.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jquery-confirm/jquery-confirm.min.js"></script>
+    <script src="assets/local/scripts.js"></script>
+
+    <script>
+        var map;
+
+        function initMap() {
+            var myLatLng = {lat: -19.868114, lng: -43.772527};
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 14
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Faria Personalizados'
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-QJzvynLdvdv_A5u-m9DnvXbtIdDiDuM&callback=initMap"
+        async defer></script>
+</body>
+
+</html>

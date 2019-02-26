@@ -1,0 +1,11 @@
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\bin\fariapersonalizados.dll.config
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\bin\fariapersonalizados.dll
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\bin\fariapersonalizados.pdb
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\obj\Debug\fariapersonalizados.csprojResolveAssemblyReference.cache
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\obj\Debug\fariapersonalizados.dll
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\obj\Debug\fariapersonalizados.pdb
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\bin\AjaxControlToolkit.dll
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\bin\AjaxControlToolkit.HtmlEditor.Sanitizer.dll
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\bin\BarcodeLib.dll
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\bin\MySql.Data.dll
+C:\Projetos_Italo\fariapersonalizados\fariapersonalizados\bin\Newtonsoft.Json.dll
