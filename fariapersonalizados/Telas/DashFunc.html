@@ -1,9 +1,205 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
+<html>
 
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Faria Personalizados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
+    <!--Estilos-->
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/fontello/css/fontello.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/fontello/css/animation.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/jquery-confirm/jquery-confirm.min.css" />
+    <link href="../assets/local/estilos.css" rel="stylesheet" />
+    <style>
+        .height-100 {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            z-index: 999999;
+        }
+
+        .modalLoader {
+            background: rgba(255, 255, 255,0.8);
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            left: 0;
+            top: 0;
+        }
+
+        #text-loader {
+            font-size: 20pt;
+        }
+
+        #spin-loader {
+            color: #055e0f;
+            font-size: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Modal Loading-->
+    <div id="modalLoader" class="height-100 modalLoader" style="display: none">
+        <div id="loader" align="center" style="margin-top: 13px; margin-bottom: 13px; ">
+            <i class="icone-spinner2 animate-spin" id="spin-loader"></i>
+            <br />
+            <span id="text-loader">Aguarde, Estamos Processando...</span>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="border-bottom: solid #00ff90 2px">
+            <div class="col-lg-1">
+                <img src="../assets/img/logo.png" width="100%" />
+            </div>
+            <div class="col-lg-9 text-right">
+                Olá,<span id="NomeUsuario">Admin</span>
+            </div>
+            <div class="col-lg-2 text-right" style="font-size:30px">
+                <label class="badge badge-success">
+                    <span id="contMensagens">0</span>
+                    <i class="icone-email"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Scripts-->
+    <script src="../assets/bootstrap/jquery-3.3.1.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/jquery-confirm/jquery-confirm.min.js"></script>
+    <script src="../assets/local/scripts.js"></script>
+    <script>
+        // A $( document ).ready() block.
+        $(document).ready(function () {
+
+        });
+
+        function showLoad() {
+            $('#modalLoader').css('display', 'flex');
+            //$('body').loading({
+            //    overlay: $('#modalLoader')
+            //});
+        }
+
+
+        function hideLoader() {
+            $('#modalLoader').css('display', 'none');
+            //$('body').loading('stop');
+        }
+
+
+        function msgSucesso(msg) {
+            $.confirm({
+                theme: 'bootstrap',
+                title: 'Alerta!',
+                content: msg,
+                type: 'green',
+                typeAnimated: true,
+            });
+        }
+
+        function msgAtencao(msg) {
+            $.confirm({
+                theme: 'bootstrap',
+                title: 'Alerta!',
+                content: msg,
+                type: 'orange',
+                typeAnimated: true,
+            });
+        }
+
+        function msgErro(msg) {
+            $.confirm({
+                theme: 'bootstrap',
+                title: 'Alerta!',
+                content: msg,
+                type: 'red',
+                typeAnimated: true,
+            });
+        }
+
+        function msg(msg) {
+            $.confirm({
+                theme: 'bootstrap',
+                title: 'Alerta!',
+                content: msg,
+                typeAnimated: true,
+            });
+        }
+
+        function AutenticarUsuario() {
+            showLoad('Autenticando Usuario...');
+            //debugger;
+            //msg("Teste de Autenticação!");
+            var user = $('#_edEmail').val();
+            var pass = $('#_edSenha').val();
+            if (user == "" || user == null) {
+                hideLoader();
+                msgAtencao("Campo Email é obrigatorio");
+                return;
+            }
+
+            if (pass == "" || pass == null) {
+                hideLoader();
+                msgAtencao("Campo Senha é obrigatorio");
+                return;
+            }
+
+            var obj = {
+                usuario: user,
+                senha: pass
+            };
+
+            var param = JSON.stringify(obj);
+            console.log(param);
+            $.ajax({
+                url: "../services/Auth.asmx/AutenticarUsuario",
+                type: 'POST',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: param,
+                success: function (data) {
+                    console.log(data);
+                    var dados = JSON.parse(data.d);
+                    console.log(dados);
+                    var auth = dados.Autenticado;
+                    console.log(auth);
+                    if (auth == false) {
+                        hideLoader();
+                        msgErro('Usuario não Autenticado.<br> <i>Ainda não é cadastrado? Cadastre-se para acessar a area restrita.</i>');
+                    }
+                    else {
+                        localStorage.setItem('usuario', dados.Usuario);
+                        localStorage.setItem('perfil', dados.Perfil);
+                        localStorage.setItem('id', dados.Id);
+                        localStorage.setItem('autenticado', true);
+                    }
+                    var perfil = dados.Perfil;
+                    if (perfil == 1) {
+                        hideLoader();
+                        window.location.href = "DashFunc.html";
+                    }
+                    else if (perfil == 2) {
+                        hideLoader();
+                        window.location.href = "DashCliente.html";
+                    }
+
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>

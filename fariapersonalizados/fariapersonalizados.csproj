@@ -303,6 +303,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\Auth.asmx.cs">
       <DependentUpon>Auth.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="App_Code\BancoDados.cs" />
   </ItemGroup>
