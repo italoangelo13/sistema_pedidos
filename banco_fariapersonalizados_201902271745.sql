@@ -67,7 +67,7 @@ CREATE TABLE `mensagens` (
 
 /*!40000 ALTER TABLE `mensagens` DISABLE KEYS */;
 INSERT INTO `mensagens` (`MEN_CODIGOID`,`MEN_ASSUNTO`,`MEN_CODUSUREMETENTE`,`MEN_CODUSUdESTINATARIO`,`MEN_DATACRIACAO`,`MEN_DESCRICAO`) VALUES 
- (1,'Orçamento de canecas de Acrilico',2,1,'2019-02-27 11:05:00','Boa Tarde <br> Gostaria de pedir o orçamento de 50 canecas de chopp, da cor branca.');
+ (1,'Orçamento de canecas de Acrilico',2,0,'2019-02-27 11:05:00','Boa Tarde <br> Gostaria de pedir o orçamento de 50 canecas de chopp, da cor branca.');
 /*!40000 ALTER TABLE `mensagens` ENABLE KEYS */;
 
 
@@ -109,7 +109,8 @@ CREATE TABLE `usuario` (
   `USU_TELEFONE` varchar(20) DEFAULT NULL,
   `USU_CELULAR` varchar(20) DEFAULT NULL,
   `USU_DATACADASTRO` datetime DEFAULT NULL,
-  `USU_CEP` varchar(10) NOT NULL,
+  `USU_CEP` varchar(10) DEFAULT NULL,
+  `USU_CAMINHO_IMG_PERFIL` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`USU_CODIGOID`),
   KEY `IDX_PERFIL` (`USU_PERFIL`) USING BTREE,
   CONSTRAINT `FK_PERFIL` FOREIGN KEY (`USU_PERFIL`) REFERENCES `perfil` (`PER_CODIGOID`)
@@ -120,9 +121,9 @@ CREATE TABLE `usuario` (
 --
 
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` (`USU_CODIGOID`,`USU_NOME`,`USU_USUARIO`,`USU_SENHA`,`USU_PERFIL`,`USU_EMAIL`,`USU_ENDERECO`,`USU_TELEFONE`,`USU_CELULAR`,`USU_DATACADASTRO`,`USU_CEP`) VALUES 
- (1,'Italo Angelo','italoangelo13','2bc33fada526d4eae9c27647d2e374b8',1,'italoangelo.ti@gmail.com','Rua José Augusto Pinto, 190, Pompéu, Sabará - MG','(31) 3671-6139','(31) 97507-0686','2019-02-27 10:53:00','34518-010'),
- (2,'Valentina Faria','valentina1faria','d85a98ee06397ef26667d5cd994c250b',2,'italogaloucura22@gmail.com','Rua José Augusto Pinto, 190, Pompéu, Sabará - MG','(31) 3671-6139','(31) 97507-0686','2019-02-27 11:04:00','34518-010');
+INSERT INTO `usuario` (`USU_CODIGOID`,`USU_NOME`,`USU_USUARIO`,`USU_SENHA`,`USU_PERFIL`,`USU_EMAIL`,`USU_ENDERECO`,`USU_TELEFONE`,`USU_CELULAR`,`USU_DATACADASTRO`,`USU_CEP`,`USU_CAMINHO_IMG_PERFIL`) VALUES 
+ (1,'Italo Angelo','italoangelo13','2bc33fada526d4eae9c27647d2e374b8',1,'italoangelo.ti@gmail.com','Rua José Augusto Pinto, 190, Pompéu, Sabará - MG','(31) 3671-6139','(31) 97507-0686','2019-02-27 10:53:00','34518-010',NULL),
+ (2,'Valentina Faria','valentina1faria','d85a98ee06397ef26667d5cd994c250b',2,'italogaloucura22@gmail.com','Rua José Augusto Pinto, 190, Pompéu, Sabará - MG','(31) 3671-6139','(31) 97507-0686','2019-02-27 11:04:00','34518-010',NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 

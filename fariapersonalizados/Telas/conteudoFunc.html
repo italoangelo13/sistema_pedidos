@@ -44,26 +44,11 @@
             font-size: 150px;
         }
 
-        .btn_menu {
-            border: 1px solid #fff;
-            margin-top: 10px;
-            background: #808080;
-            color: #fff;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-            .btn_menu:hover {
-                background: #535252;
-            }
-
-
-        #imgUsuario {
-            border-radius: 500px;
-        }
-
-        #conteudo {
-            height: 100vh;
+        .card-btn {
+           background: #4caf50;
+           border-radius:10px;
+           border: 2px solid #fff;
+           cursor: pointer;
         }
     </style>
 </head>
@@ -78,27 +63,66 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row" style="background: #333333;">
-            <div class="col-lg-2 text-center text-white">
-                <img id="imgUsuario" src="../assets/img/users/user_padrao.png" width="150px" />
-                <br />
-                <h5>
-                    <span id="nomeComp">Usuario</span>
-                    <br />
-                    <small>(<label id="nomeUsuario">User</label>)</small>
-                </h5>
+        <div class="row" style="margin-top:10px;">
+            <!-- Meu Perfil -->
+            <div class="card-btn col-lg-3 col-sm-12" onclick="mudaTela('TelasFunc/meuPerfil.html')">
+                <div class="row">
+                    <div class="col-lg-12 text-center text-white">
+                        <h1>Meu Perfil</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center text-white">
+                        <i class="icone-user" style="font-size:150px;"></i>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-lg-10 text-right" style="font-size:20px">
-                <label class="badge badge-danger" style="cursor:pointer" onclick="mudaTela('TelasFunc/mensagem.html')"><span id="numMsg"></span> <i class="icone-email"></i></label>
-                <br />
-                <label class="text-white" onclick="logout()" style="cursor:pointer"><i class="icone-logout"></i> Sair</label>
+            <!-- Mensagens -->
+            <div class="card-btn col-lg-3 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-12 text-center text-white">
+                        <h1>Mensagens</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center text-white">
+                        <i class="icone-email" style="font-size:150px;"></i>
+                    </div>
+                </div>
             </div>
+
+
+            <!-- Produtos -->
+            <div class="card-btn col-lg-3 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-12 text-center text-white">
+                        <h1>Produtos</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center text-white">
+                        <i class="icone-truck" style="font-size:150px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pedidos -->
+            <div class="card-btn col-lg-3 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-12 text-center text-white">
+                        <h1>Pedidos</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center text-white">
+                        <i class="icone-basket" style="font-size:150px;"></i>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="row">
-            <iframe id="conteudo" name="conteudo" src="conteudofunc.html" class="col-lg-12"></iframe>
-        </div>
     </div>
 
 
@@ -112,14 +136,7 @@
     <script>
         // A $( document ).ready() block.
         $(document).ready(function () {
-            verificarAutenticacao();
-            verificarMensagens();
-            buscaDadosUsuario();
-            setInterval("verificarAutenticacao()", 5000);
-            setInterval("verificarMensagens()", 150000);
-
-
-
+            
         });
 
         function showLoad() {
@@ -128,7 +145,6 @@
             //    overlay: $('#modalLoader')
             //});
         }
-
         function mudaTela(tela) {
             window.open(tela, 'conteudo');
         }
@@ -254,3 +270,4 @@
 </body>
 
 </html>
+

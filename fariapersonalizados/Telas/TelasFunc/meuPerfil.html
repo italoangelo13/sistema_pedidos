@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Faria Personalizados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+
+    <!--Estilos-->
+    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/fontello/css/fontello.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/fontello/css/animation.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/jquery-confirm/jquery-confirm.min.css" />
+    <link href="../../assets/local/estilos.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Modal Loading-->
+    <div id="modalLoader" class="height-100 modalLoader" style="display: none">
+        <div id="loader" align="center" style="margin-top: 13px; margin-bottom: 13px; ">
+            <i class="icone-spinner2 animate-spin" id="spin-loader"></i>
+            <br />
+            <span id="text-loader">Aguarde, Estamos Processando...</span>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row bg-success">
+            <div class="col-lg-12 text-right text-white">
+                <h6 class="display-4">Meu Perfil</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Scripts-->
+    <script src="../../assets/bootstrap/jquery-3.3.1.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../assets/jquery-confirm/jquery-confirm.min.js"></script>
+    <script src="../../assets/local/scripts.js"></script>
+    <script>
+        // A $( document ).ready() block.
+        $(document).ready(function () {
+
+        });
+
+        function showLoad() {
+            $('#modalLoader').css('display', 'flex');
+            //$('body').loading({
+            //    overlay: $('#modalLoader')
+            //});
+        }
+
+        function hideLoader() {
+            $('#modalLoader').css('display', 'none');
+            //$('body').loading('stop');
+        }
+
+
+        function msgSucesso(msg) {
+            $.confirm({
+                theme: 'bootstrap',
+                title: 'Alerta!',
+                content: msg,
+                type: 'green',
+                typeAnimated: true,
+            });
+        }
+
+        function msgAtencao(msg) {
+            $.confirm({
+                theme: 'bootstrap',
+                title: 'Alerta!',
+                content: msg,
+                type: 'orange',
+                typeAnimated: true,
+            });
+        }
+
+        function msgErro(msg) {
+            $.confirm({
+                theme: 'bootstrap',
+                title: 'Alerta!',
+                content: msg,
+                type: 'red',
+                typeAnimated: true,
+            });
+        }
+
+        function msg(msg) {
+            $.confirm({
+                theme: 'bootstrap',
+                title: 'Alerta!',
+                content: msg,
+                typeAnimated: true,
+            });
+        }
+    </script>
+</body>
+</html>
