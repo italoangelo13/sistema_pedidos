@@ -39,7 +39,7 @@ namespace fariapersonalizados.services
 
                 BancoDados b = new BancoDados();
                 b.Query(@"SELECT *
-                            FROM   USUARIOS where USU_USUARIO = ?USU_USUARIO and USU_SENHA = ?USU_SENHA");
+                            FROM   USUARIO where USU_USUARIO = ?USU_USUARIO and USU_SENHA = ?USU_SENHA");
                 b.SetParametro("?USU_USUARIO", usuario);
                 b.SetParametro("?USU_SENHA", FormsAuthentication.HashPasswordForStoringInConfigFile(senha, "md5"));
                 DataTable dt = b.ExecutarDataTable();

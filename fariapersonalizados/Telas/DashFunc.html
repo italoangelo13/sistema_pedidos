@@ -79,18 +79,20 @@
     </div>
     <div class="container-fluid">
         <div class="row" style="background: #333333;">
-            <div class="col-lg-2 text-center text-white">
-                <img id="imgUsuario" src="../assets/img/users/user_padrao.png" width="150px" />
+            <div class="col-lg-2 col-6 text-center text-white">
+                <img id="imgUsuario" src="../assets/img/users/user_padrao.png" width="50px" />
                 <br />
-                <h5>
+                <h6>
                     <span id="nomeComp">Usuario</span>
                     <br />
                     <small>(<label id="nomeUsuario">User</label>)</small>
-                </h5>
+                </h6>
             </div>
 
-            <div class="col-lg-10 text-right" style="font-size:20px">
+            <div class="col-lg-10 col-6 text-right" style="font-size:20px">
                 <label class="badge badge-danger" style="cursor:pointer" onclick="mudaTela('TelasFunc/mensagem.html')"><span id="numMsg"></span> <i class="icone-email"></i></label>
+                <br />
+                <label class="text-white" onclick="mudaTela('conteudoFunc.html')" style="cursor:pointer"><i class="icone-home"></i> Inicio</label>
                 <br />
                 <label class="text-white" onclick="logout()" style="cursor:pointer"><i class="icone-logout"></i> Sair</label>
             </div>
@@ -148,9 +150,9 @@
                 dataType: "json",
                 data: JSON.stringify(obj),
                 success: function (data) {
-                    console.log(data);
+                    //console.log(data);
                     var dados = JSON.parse(data.d);
-                    console.log(dados);
+                    //console.log(dados);
                     $('#numMsg').text(dados);
                 }
             });
@@ -225,7 +227,7 @@
                 Id: id
             }
             var teste = JSON.stringify(obj);
-            console.log(teste);
+            //console.log(teste);
             $.ajax({
                 url: "../services/UserService.asmx/GetUsuarioPorId",
                 type: 'POST',
@@ -233,9 +235,9 @@
                 dataType: "json",
                 data: JSON.stringify(obj),
                 success: function (data) {
-                    console.log(data);
+                    //console.log(data);
                     var dados = JSON.parse(data.d);
-                    console.log(dados);
+                    //console.log(dados);
                     var camImg = dados.CaminhoImagem;
                     var nome = dados.Nome;
                     var usuario = dados.Usuario

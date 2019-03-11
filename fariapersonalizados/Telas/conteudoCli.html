@@ -45,7 +45,7 @@
         }
 
         .card-btn {
-           background: #4caf50;
+           background: #69117e;
            border-radius:10px;
            border: 2px solid #fff;
            cursor: pointer;
@@ -65,7 +65,7 @@
     <div class="container-fluid">
         <div class="row" style="margin-top:10px;">
             <!-- Meu Perfil -->
-            <div class="card-btn col-lg-3 col-sm-12" onclick="mudaTela('TelasFunc/meuPerfil.html')">
+            <div class="card-btn col-lg-3 col-sm-12" onclick="mudaTela('TelasCli/meuPerfil.html')">
                 <div class="row">
                     <div class="col-lg-12 text-center text-white">
                         <h1>Meu Perfil</h1>
@@ -74,20 +74,6 @@
                 <div class="row">
                     <div class="col-lg-12 text-center text-white">
                         <i class="icone-user" style="font-size:150px;"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Usuarios -->
-            <div class="card-btn col-lg-3 col-sm-12" onclick="mudaTela('TelasFunc/meuPerfil.html')">
-                <div class="row">
-                    <div class="col-lg-12 text-center text-white">
-                        <h1>Usuários</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center text-white">
-                        <i class="icone-users" style="font-size:150px;"></i>
                     </div>
                 </div>
             </div>
@@ -107,16 +93,16 @@
             </div>
 
 
-            <!-- Produtos -->
-            <div class="card-btn col-lg-3 col-sm-12">
-                <div class="row">
-                    <div class="col-lg-12 text-center text-white">
-                        <h1>Produtos</h1>
-                    </div>
+            <!-- Orçamentos -->
+            <div class="card-btn col-lg-3 col-sm-12" onclick="mudaTelaCli('TelasCli/orcamento.html')">
+                <div class=" row">
+                <div class="col-lg-12 text-center text-white">
+                    <h1>Orçamento</h1>
                 </div>
+            </div>
                 <div class="row">
                     <div class="col-lg-12 text-center text-white">
-                        <i class="icone-truck" style="font-size:150px;"></i>
+                        <i class="icone-shopping-basket" style="font-size:150px;"></i>
                     </div>
                 </div>
             </div>
@@ -159,8 +145,9 @@
             //    overlay: $('#modalLoader')
             //});
         }
-        function mudaTela(tela) {
-            window.open(tela, 'conteudo');
+        function mudaTelaCli(tela) {
+            console.log("troca tela.");
+            window.open(tela, 'conteudoCli');
         }
 
         function verificarMensagens() {

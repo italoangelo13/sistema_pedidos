@@ -20,3 +20,14 @@ C:\Projetos_Italo\sistema_pedidos\fariapersonalizados\bin\Newtonsoft.Json.dll
 C:\Projetos_Italo\sistema_pedidos\fariapersonalizados\obj\Debug\fariapersonalizados.csprojResolveAssemblyReference.cache
 C:\Projetos_Italo\sistema_pedidos\fariapersonalizados\obj\Debug\fariapersonalizados.dll
 C:\Projetos_Italo\sistema_pedidos\fariapersonalizados\obj\Debug\fariapersonalizados.pdb
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\bin\fariapersonalizados.dll.config
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\bin\fariapersonalizados.dll
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\bin\fariapersonalizados.pdb
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\bin\AjaxControlToolkit.dll
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\bin\AjaxControlToolkit.HtmlEditor.Sanitizer.dll
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\bin\BarcodeLib.dll
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\bin\MySql.Data.dll
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\bin\Newtonsoft.Json.dll
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\obj\Debug\fariapersonalizados.csprojResolveAssemblyReference.cache
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\obj\Debug\fariapersonalizados.dll
+C:\Users\Italo e Ana\Desktop\sistema_pedidos\fariapersonalizados\obj\Debug\fariapersonalizados.pdb

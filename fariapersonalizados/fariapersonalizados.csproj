@@ -278,6 +278,7 @@
     <Content Include="assets\img\fotos\cliente2.jpg" />
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\img\logo_branco.png" />
+    <Content Include="assets\img\logo_sisped.png" />
     <Content Include="assets\img\missao_e_visao.jpg" />
     <Content Include="assets\img\produtos\caneca-acrilico.jpg" />
     <Content Include="assets\img\produtos\caneca_polimero.jpg" />
@@ -297,9 +298,11 @@
     <Content Include="services\Mensagens.asmx" />
     <Content Include="services\UserService.asmx" />
     <Content Include="Telas\admin.html" />
+    <Content Include="Telas\conteudoCli.html" />
     <Content Include="Telas\conteudoFunc.html" />
     <Content Include="Telas\DashFunc.html" />
     <Content Include="Telas\DashCliente.html" />
+    <Content Include="Telas\TelasCli\Orcamento.html" />
     <Content Include="Telas\TelasFunc\meuPerfil.html" />
     <Content Include="Web.config" />
   </ItemGroup>
